@@ -1,6 +1,5 @@
 import pandas as pd
 
-pd.options.display.max_columns = None
 df = pd.read_csv('countypres_2000-2016.csv')
 print('File loaded')
 years = [str(year)+p for year in range(2000,2020,4) for p in ['D','R','O']]
