@@ -11,7 +11,7 @@ def getDataset(data):
     return final
 
 
-model = tf.keras.models.load_model('modelv1.h5')
+model = tf.keras.models.load_model('model.h5')
 print(model.summary())
 df = pd.read_csv('counties.csv')
 data = df.drop(columns=['state','county'])
