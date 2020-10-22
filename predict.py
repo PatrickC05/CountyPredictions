@@ -24,8 +24,8 @@ print('Finished predicting')
 predictions[::3]*=20000
 predictions[1::3]*=20000
 predictions[2::3]*=250
-predictions = np.reshape(predictions,(examples,12))
-new_df = pd.DataFrame(predictions,dtype=np.int64,columns=[str(year)+s for s in ['D','R','O'] for year in range(2008,2024,4)])
+predictions = np.reshape(predictions,(examples,3))
+new_df = pd.DataFrame(predictions,dtype=np.int64,columns=['D','R','O'])
 new_df[new_df<0]=0
 new_df.insert(0,'county',df['county'])
 new_df.insert(0,'state',df['state'])
