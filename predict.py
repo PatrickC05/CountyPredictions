@@ -23,6 +23,7 @@ def getDataset(data):
 model = tf.keras.models.load_model('model.h5')
 print(model.summary())
 df = pd.read_csv('counties.csv')
+df.dropna(subset=[str(year)+p for year in [2004,2008,2012,2016] for p in ['D','R']],inplace=True)
 data = df.drop(columns=['state','county'])
 data = data.to_numpy(dtype=np.int64)
 examples = data.shape[0]
